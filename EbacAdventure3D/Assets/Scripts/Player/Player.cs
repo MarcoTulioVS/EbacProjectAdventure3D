@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     private float vSpeed = 0;
 
+    public float jumpSpeed;
     public Animator animator;
 
     private void Update()
@@ -19,7 +20,19 @@ public class Player : MonoBehaviour
         var inputAxisVertical = Input.GetAxis("Vertical");
         var speedVector = transform.forward * inputAxisVertical * speed;
 
-        vSpeed = gravity * Time.deltaTime;
+        if (characterController.isGrounded)
+        {
+            vSpeed = 0;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                vSpeed = jumpSpeed;
+            }
+        }
+
+
+
+        vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
 
         characterController.Move(speedVector * Time.deltaTime);

@@ -7261,7 +7261,7 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &1499108868
 MonoBehaviour:
@@ -7278,7 +7278,8 @@ MonoBehaviour:
   characterController: {fileID: 1499108867}
   speed: 5
   turnSpeed: 200
-  gravity: -9.8
+  gravity: 14
+  jumpSpeed: 7
   animator: {fileID: 1653878393}
 --- !u!4 &1499108869
 Transform:
