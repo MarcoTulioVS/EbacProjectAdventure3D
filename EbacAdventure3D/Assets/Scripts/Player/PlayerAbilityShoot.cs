@@ -4,27 +4,24 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
-    public InputAction shootAction;
-
+    public GunBase gunBase;
 
     protected override void Init()
     {
         base.Init();
-        shootAction.performed += ctx => Shoot();
+        inputs.Gameplay.Shoot.performed += ctx => StartShoot();
+        inputs.Gameplay.Shoot.canceled += ctx => CancelShoot();
     }
 
-    private void Shoot()
+    private void StartShoot()
     {
-        Debug.Log("Shoot");
+        gunBase.StartShoot();
+        
     }
 
-    private void OnEnable()
+    private void CancelShoot()
     {
-        shootAction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        shootAction.Disable();
+        gunBase.StopShoot();
+        
     }
 }
