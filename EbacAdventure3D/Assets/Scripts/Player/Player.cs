@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
         }
 
 
-
         vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
 
