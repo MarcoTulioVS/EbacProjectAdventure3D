@@ -8,6 +8,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 
     public Transform gunPosition;
     private GunBase _currentGun;
+
     protected override void Init()
     {
         base.Init();
