@@ -12,12 +12,14 @@ public class GunBase : MonoBehaviour
 
     private Coroutine _currentCoroutine;
 
-    public void Shoot()
+    public float speed = 50f;
+
+    public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
-        
+        projectile.speed = speed;
     }
 
     protected virtual IEnumerator ShootCoroutine()
