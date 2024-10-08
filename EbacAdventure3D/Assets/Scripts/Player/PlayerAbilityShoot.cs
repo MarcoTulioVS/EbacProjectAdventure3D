@@ -18,7 +18,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
         inputs.Gameplay.Shoot.canceled += ctx => CancelShoot();
     }
 
-    private void CreateGun()
+    public void CreateGun()
     {
         _currentGun = Instantiate(gunBase, gunPosition);
         _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles - Vector3.zero;
