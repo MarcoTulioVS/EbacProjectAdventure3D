@@ -25,6 +25,7 @@ namespace Enemy
 
         public Collider coll;
 
+        public ParticleSystem particleSystem;
         private void Awake()
         {
             Init();
@@ -65,6 +66,11 @@ namespace Enemy
             if(flashColor != null)
             {
                 flashColor.Flash();
+            }
+
+            if(particleSystem != null)
+            {
+                particleSystem.Emit(15);
             }
 
             _currentLife-=dmg;
