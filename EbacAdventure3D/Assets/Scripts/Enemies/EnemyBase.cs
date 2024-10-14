@@ -5,10 +5,12 @@ using DG.Tweening;
 using Animation;
 namespace Enemy
 {
-    public class EnemyBase : MonoBehaviour
+    public class EnemyBase : MonoBehaviour,IDamageable
     {
         [SerializeField]
         private AnimationBase _animationBase;
+
+        public FlashColor flashColor;
 
         public float startLife = 10f;
 
@@ -20,6 +22,8 @@ namespace Enemy
         public float startAnimationDuration = 0.2f;
         public Ease startAnimationEase = Ease.OutBack;
         public bool startWithBornAnimation = true;
+
+        public Collider coll;
 
         private void Awake()
         {
@@ -48,11 +52,21 @@ namespace Enemy
         protected virtual void OnKill()
         {
             //Destroy(gameObject,3);
+            if (coll != null)
+            {
+                coll.enabled = false;
+            }
             PlayAnimationByTrigger(AnimationType.DEATH);
+            Destroy(gameObject, 3);
         }
 
         public void OnDamage(float dmg)
         {
+            if(flashColor != null)
+            {
+                flashColor.Flash();
+            }
+
             _currentLife-=dmg;
 
             if (_currentLife <= 0)
@@ -77,6 +91,11 @@ namespace Enemy
             {
                 OnDamage(5);
             }
+        }
+
+        public void Damage(float damage)
+        {
+            OnDamage(damage);
         }
     }
 }
