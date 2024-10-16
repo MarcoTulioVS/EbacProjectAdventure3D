@@ -10,6 +10,9 @@ public class ProjectileBase : MonoBehaviour
     public float speed = 50f;
 
     public float damageAmount;
+
+    [SerializeField]
+    private bool antiChicken;
     private void Awake()
     {
         Destroy(gameObject,timeToDestroy);
@@ -25,7 +28,7 @@ public class ProjectileBase : MonoBehaviour
 
         if(damageable != null)
         {
-            damageable.Damage(damageAmount);
+            damageable.Damage(damageAmount,antiChicken);
         }
         
         Destroy(gameObject);

@@ -72,7 +72,7 @@ namespace Enemy
             Destroy(gameObject, 3);
         }
 
-        public void OnDamage(float dmg)
+        public void OnDamage(float dmg,bool antiChicken)
         {
             if(flashColor != null)
             {
@@ -84,7 +84,7 @@ namespace Enemy
                 particleSystem.Emit(15);
             }
 
-            if (!isChicken)
+            if (!isChicken || antiChicken)
             {
                 _currentLife -= dmg;
             }
@@ -120,15 +120,15 @@ namespace Enemy
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                OnDamage(5);
-            }
+            //if (Input.GetKeyDown(KeyCode.T))
+            //{
+            //    OnDamage(5);
+            //}
         }
 
-        public void Damage(float damage)
+        public void Damage(float damage,bool antiChicken)
         {
-            OnDamage(damage);
+            OnDamage(damage,antiChicken);
         }
     }
 }
