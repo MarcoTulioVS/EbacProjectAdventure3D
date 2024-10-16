@@ -26,6 +26,17 @@ namespace Enemy
         public Collider coll;
 
         public ParticleSystem particleSystem;
+        
+        [Header("Animation Chicken")]
+        [SerializeField]
+        private bool isChicken;
+
+        [SerializeField]
+        private float reSize;
+
+        [SerializeField]
+        private float durationSize;
+
         private void Awake()
         {
             Init();
@@ -73,7 +84,23 @@ namespace Enemy
                 particleSystem.Emit(15);
             }
 
-            _currentLife-=dmg;
+            if (!isChicken)
+            {
+                _currentLife -= dmg;
+            }
+            else
+            {
+                
+                if(transform.localScale.x < 5)
+                {
+                    _currentLife += dmg;
+                    transform.DOScale(reSize, durationSize).SetEase(startAnimationEase);
+                    reSize += 1;
+
+                }
+                
+            }
+           
 
             if (_currentLife <= 0)
             {
