@@ -27,7 +27,7 @@ namespace Enemy
 
         public ParticleSystem particleSystem;
         
-        [Header("Animation Chicken")]
+        [Header("Animation Exclusive")]
         [SerializeField]
         private bool isChicken;
 
@@ -37,6 +37,13 @@ namespace Enemy
         [SerializeField]
         private float durationSize;
 
+        [SerializeField]
+        private bool isPlant;
+
+        [SerializeField]
+        private float minScaleSize;
+
+        public Transform graphic;
         private void Awake()
         {
             Init();
@@ -84,9 +91,20 @@ namespace Enemy
                 particleSystem.Emit(15);
             }
 
+            if (isPlant)
+            {
+                if (graphic.localScale.x > minScaleSize)
+                {
+                    transform.DOScale(reSize, durationSize).SetEase(startAnimationEase);
+                    reSize-=1;
+                }
+                
+            }
+
             if (!isChicken || antiChicken)
             {
                 _currentLife -= dmg;
+
             }
             else
             {
