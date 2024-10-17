@@ -41,6 +41,7 @@ namespace Enemy
         protected float minScaleSize;
 
         public Transform graphic;
+        public ParticleSystem deathParticle;
         private void Awake()
         {
             Init();
@@ -73,7 +74,9 @@ namespace Enemy
                 coll.enabled = false;
             }
             PlayAnimationByTrigger(AnimationType.DEATH);
+            deathParticle.Play();
             Destroy(gameObject, 3);
+            
         }
 
         public virtual void OnDamage(float dmg,bool antiChicken)
