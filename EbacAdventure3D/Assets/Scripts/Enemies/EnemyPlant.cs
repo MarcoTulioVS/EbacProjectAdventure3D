@@ -19,6 +19,7 @@ public class EnemyPlant : EnemyBase
             particleSystem.Emit(15);
         }
 
+        _currentLife -= dmg;
 
         if (graphic.localScale.x > minScaleSize)
         {

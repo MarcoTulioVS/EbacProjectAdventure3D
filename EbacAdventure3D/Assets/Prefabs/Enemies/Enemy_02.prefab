@@ -4903,9 +4903,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 710217571588278350}
-  - component: {fileID: 710217571588278337}
   - component: {fileID: 710217571588278336}
   - component: {fileID: 710217571588278351}
+  - component: {fileID: 860964820784676709}
   m_Layer: 0
   m_Name: Enemy_02
   m_TagString: Untagged
@@ -4928,27 +4928,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &710217571588278337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710217571588278349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac235a4a9a6253c4d8ecbd3a9ce6dea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationBase: {fileID: 710217571588278336}
-  flashColor: {fileID: 710217571695880014}
-  startLife: 5
-  _currentLife: 0
-  startAnimationDuration: 0.2
-  startAnimationEase: 27
-  startWithBornAnimation: 1
-  coll: {fileID: 710217571588278351}
-  particleSystem: {fileID: 710217570735638465}
 --- !u!114 &710217571588278336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4984,6 +4963,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.24, y: 1.78, z: 1.31}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &860964820784676709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710217571588278349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe50df9a45b6a342adb2e9f01899f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationBase: {fileID: 710217571588278336}
+  flashColor: {fileID: 710217571695880014}
+  startLife: 5
+  _currentLife: 0
+  startAnimationDuration: 0.2
+  startAnimationEase: 27
+  startWithBornAnimation: 1
+  coll: {fileID: 710217571588278351}
+  particleSystem: {fileID: 710217570735638465}
+  isChicken: 1
+  reSize: 1.5
+  durationSize: 1
+  minScaleSize: 0
+  graphic: {fileID: 710217571587652675}
 --- !u!1001 &710217570642719748
 PrefabInstance:
   m_ObjectHideFlags: 0

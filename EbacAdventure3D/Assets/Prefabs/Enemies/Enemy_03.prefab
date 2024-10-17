@@ -4871,9 +4871,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365154732625709215}
-  - component: {fileID: 8365154732625709208}
   - component: {fileID: 8365154732625709209}
   - component: {fileID: 8365154732625709214}
+  - component: {fileID: 2185399863498881604}
   m_Layer: 0
   m_Name: Enemy_03
   m_TagString: Untagged
@@ -4896,33 +4896,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8365154732625709208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8365154732625709212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac235a4a9a6253c4d8ecbd3a9ce6dea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationBase: {fileID: 8365154732625709209}
-  flashColor: {fileID: 8365154733685576952}
-  startLife: 20
-  _currentLife: 0
-  startAnimationDuration: 0.2
-  startAnimationEase: 27
-  startWithBornAnimation: 1
-  coll: {fileID: 8365154732625709214}
-  particleSystem: {fileID: 8365154731938486237}
-  isChicken: 0
-  reSize: 3
-  durationSize: 1
-  isPlant: 1
-  minScaleSize: 10
-  graphic: {fileID: 8365154733404671458}
 --- !u!114 &8365154732625709209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4958,6 +4931,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.99, y: 8.34, z: 5.78}
   m_Center: {x: 3.42, y: 4.31, z: -0.93}
+--- !u!114 &2185399863498881604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365154732625709212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06859dce1c7f3f345a5e719b711a5936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationBase: {fileID: 8365154732625709209}
+  flashColor: {fileID: 8365154733685576952}
+  startLife: 20
+  _currentLife: 0
+  startAnimationDuration: 0.2
+  startAnimationEase: 27
+  startWithBornAnimation: 1
+  coll: {fileID: 8365154732625709214}
+  particleSystem: {fileID: 8365154731938486237}
+  isChicken: 0
+  reSize: 10
+  durationSize: 1
+  minScaleSize: 1
+  graphic: {fileID: 8365154733404671458}
 --- !u!1 &8365154733404671459
 GameObject:
   m_ObjectHideFlags: 0
