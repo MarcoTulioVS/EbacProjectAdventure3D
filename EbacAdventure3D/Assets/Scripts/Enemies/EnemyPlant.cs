@@ -8,12 +8,27 @@ public class EnemyPlant : EnemyBase
 
     public override void OnDamage(float dmg, bool antiChicken)
     {
-        base.OnDamage(dmg, antiChicken);
+        
+        if (flashColor != null)
+        {
+            flashColor.Flash();
+        }
+
+        if (particleSystem != null)
+        {
+            particleSystem.Emit(15);
+        }
+
 
         if (graphic.localScale.x > minScaleSize)
         {
-            transform.DOScale(reSize, durationSize).SetEase(startAnimationEase);
+            graphic.DOScale(reSize, durationSize).SetEase(startAnimationEase);
             reSize -= 1;
+        }
+
+        if (_currentLife <= 0)
+        {
+            Kill();
         }
 
     }

@@ -15,7 +15,7 @@ namespace Enemy
         public float startLife = 10f;
 
         [SerializeField]
-        private float _currentLife;
+        protected float _currentLife;
 
         [Header("Start Animation")]
 
@@ -36,9 +36,6 @@ namespace Enemy
 
         [SerializeField]
         protected float durationSize;
-
-        [SerializeField]
-        private bool isPlant;
 
         [SerializeField]
         protected float minScaleSize;
@@ -90,25 +87,8 @@ namespace Enemy
             {
                 particleSystem.Emit(15);
             }
-
-            if (!isChicken || antiChicken)
-            {
-                _currentLife -= dmg;
-
-            }
-            else
-            {
-                
-                if(transform.localScale.x < 5)
-                {
-                    _currentLife += dmg;
-                    transform.DOScale(reSize, durationSize).SetEase(startAnimationEase);
-                    reSize += 1;
-
-                }
-                
-            }
-           
+     
+            _currentLife -= dmg;
 
             if (_currentLife <= 0)
             {
