@@ -32,16 +32,16 @@ namespace Enemy
         private bool isChicken;
 
         [SerializeField]
-        private float reSize;
+        protected float reSize;
 
         [SerializeField]
-        private float durationSize;
+        protected float durationSize;
 
         [SerializeField]
         private bool isPlant;
 
         [SerializeField]
-        private float minScaleSize;
+        protected float minScaleSize;
 
         public Transform graphic;
         private void Awake()
@@ -79,7 +79,7 @@ namespace Enemy
             Destroy(gameObject, 3);
         }
 
-        public void OnDamage(float dmg,bool antiChicken)
+        public virtual void OnDamage(float dmg,bool antiChicken)
         {
             if(flashColor != null)
             {
@@ -89,16 +89,6 @@ namespace Enemy
             if(particleSystem != null)
             {
                 particleSystem.Emit(15);
-            }
-
-            if (isPlant)
-            {
-                if (graphic.localScale.x > minScaleSize)
-                {
-                    transform.DOScale(reSize, durationSize).SetEase(startAnimationEase);
-                    reSize-=1;
-                }
-                
             }
 
             if (!isChicken || antiChicken)
