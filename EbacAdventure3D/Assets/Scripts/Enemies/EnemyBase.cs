@@ -90,7 +90,9 @@ namespace Enemy
             {
                 particleSystem.Emit(15);
             }
-     
+
+            transform.position -= transform.forward;
+
             _currentLife -= dmg;
 
             if (_currentLife <= 0)
@@ -112,6 +114,13 @@ namespace Enemy
         public void Damage(float damage,bool antiChicken)
         {
             OnDamage(damage,antiChicken);
+        }
+
+        public void Damage(float damage,bool antiChicken,Vector3 dir)
+        {
+            OnDamage(damage, antiChicken);
+            transform.DOMove(transform.position - dir, 0.1f);
+            //transform.position -= dir;
         }
     }
 }
