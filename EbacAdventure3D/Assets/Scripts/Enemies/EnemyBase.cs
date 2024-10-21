@@ -116,11 +116,29 @@ namespace Enemy
             OnDamage(damage,antiChicken);
         }
 
+        public void Damage(float damage)
+        {
+            //Do nothing here
+        }
+
         public void Damage(float damage,bool antiChicken,Vector3 dir)
         {
             OnDamage(damage, antiChicken);
             transform.DOMove(transform.position - dir, 0.1f);
             //transform.position -= dir;
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Player p = collision.gameObject.GetComponent<Player>();
+
+            if(p != null)
+            {
+                
+                p.Damage(1);
+            }
+        }
+
+        
     }
 }
