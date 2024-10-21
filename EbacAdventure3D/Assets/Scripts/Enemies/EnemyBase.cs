@@ -109,14 +109,6 @@ namespace Enemy
             _animationBase.PlayAnimationByTrigger(animationType);
         }
 
-        private void Update()
-        {
-            //if (Input.GetKeyDown(KeyCode.T))
-            //{
-            //    OnDamage(5);
-            //}
-        }
-
         public void Damage(float damage,bool antiChicken)
         {
             OnDamage(damage,antiChicken);
