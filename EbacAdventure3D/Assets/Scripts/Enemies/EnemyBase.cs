@@ -42,9 +42,18 @@ namespace Enemy
 
         public Transform graphic;
         public ParticleSystem deathParticle;
+
+        public bool lookAtPlayer;
+
+        private Player _player;
         private void Awake()
         {
             Init();
+        }
+
+        private void Start()
+        {
+            _player = GameObject.FindObjectOfType<Player>();
         }
 
         protected void ResetLife()
@@ -138,6 +147,13 @@ namespace Enemy
             }
         }
 
+        public virtual void Update()
+        {
+            if (lookAtPlayer)
+            {
+                transform.LookAt(_player.transform.position);
+            }
+        }
         
     }
 }

@@ -68,7 +68,7 @@ public class Player : MonoBehaviour,IDamageable
 
     public void Damage(float damage, bool antiChicken, Vector3 dir)
     {
-        //Do nothing here
+        Damage(damage);
     }
 
     public void Damage(float damage)

@@ -49,6 +49,8 @@ MonoBehaviour:
   speed: 50
   damageAmount: 5
   antiChicken: 1
+  tagsToHit:
+  - Enemy
 --- !u!54 &4117780448542595832
 Rigidbody:
   m_ObjectHideFlags: 0

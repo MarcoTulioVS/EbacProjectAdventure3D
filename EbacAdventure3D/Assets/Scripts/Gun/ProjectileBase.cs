@@ -13,6 +13,8 @@ public class ProjectileBase : MonoBehaviour
 
     [SerializeField]
     private bool antiChicken;
+
+    public List<string> tagsToHit;
     private void Awake()
     {
         Destroy(gameObject,timeToDestroy);
@@ -24,17 +26,27 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var damageable = collision.gameObject.GetComponent<IDamageable>();
-
-        if(damageable != null)
+        foreach (var t in tagsToHit)
         {
-            Vector3 dir = collision.transform.position - transform.position;
-            dir = -dir.normalized;
-            dir.y = 0f;
-            damageable.Damage(damageAmount,antiChicken,dir);
+
+            if (collision.transform.tag == t)
+            {
+
+                var damageable = collision.gameObject.GetComponent<IDamageable>();
+
+                if (damageable != null)
+                {
+                    Vector3 dir = collision.transform.position - transform.position;
+                    dir = -dir.normalized;
+                    dir.y = 0f;
+                    damageable.Damage(damageAmount, antiChicken, dir);
+                }
+                break;
+            }
         }
         
         Destroy(gameObject);
+        
     }
 
 }
