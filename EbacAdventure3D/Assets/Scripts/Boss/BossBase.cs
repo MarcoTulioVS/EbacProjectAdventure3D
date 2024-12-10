@@ -11,7 +11,8 @@ namespace Boss
         INIT,
         IDLE,
         WALK,
-        ATTACK
+        ATTACK,
+        DEATH
     }
 
     public class BossBase : MonoBehaviour
@@ -30,9 +31,12 @@ namespace Boss
         public int attackAmount = 5;
         public float timeBetweenAttacks = 0.5f;
 
+        public HealthBase healthBase;
+
         private void Awake()
         {
             Init();
+            healthBase.OnKill += OnBossKill;
         }
         private void Init()
         {
@@ -42,6 +46,7 @@ namespace Boss
             stateMachine.RegisterStates(BossAction.INIT, new BossStateInit());
             stateMachine.RegisterStates(BossAction.WALK, new BossStateWalk());
             stateMachine.RegisterStates(BossAction.ATTACK,new BossStateAttack());
+            stateMachine.RegisterStates(BossAction.DEATH, new BossStateDeath());
         }
 
         [NaughtyAttributes.Button]
@@ -105,6 +110,11 @@ namespace Boss
                 yield return new WaitForSeconds(timeBetweenAttacks);
             }
             endCallback?.Invoke();
+        }
+
+        private void OnBossKill(HealthBase h)
+        {
+            SwitchState(BossAction.DEATH);
         }
     }
 }
