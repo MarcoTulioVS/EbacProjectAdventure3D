@@ -137,7 +137,7 @@ namespace Enemy
             //transform.position -= dir;
         }
 
-        private void OnCollisionEnter(Collision collision)
+        public virtual void OnCollisionEnter(Collision collision)
         {
             Player p = collision.gameObject.GetComponent<Player>();
 

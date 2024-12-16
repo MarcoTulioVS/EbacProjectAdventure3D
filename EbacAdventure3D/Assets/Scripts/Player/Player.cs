@@ -73,6 +73,7 @@ public class Player : MonoBehaviour,IDamageable
 
     public void Damage(float damage)
     {
+        
         flashColors.ForEach(i => i.Flash());
     }
 }
