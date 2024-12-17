@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class HealthBase : MonoBehaviour
+public class HealthBase : MonoBehaviour,IDamageable
 {
     public float startLife = 10f;
     public bool destroyOnKill;
@@ -56,5 +56,15 @@ public class HealthBase : MonoBehaviour
     public void Damage()
     {
         Damage(5);
+    }
+
+    public void Damage(float damage, bool antiChicken)
+    {
+        
+    }
+
+    public void Damage(float damage, bool antiChicken, Vector3 dir)
+    {
+        Damage(damage);
     }
 }

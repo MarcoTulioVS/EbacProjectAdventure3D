@@ -14,7 +14,7 @@ public class EnemyBomb : EnemyBase
         {
 
             StartCoroutine(PlayExplosionAnimation());
-            p.Damage(10);
+            p.healthBase.Damage(10);
             Destroy(gameObject, 2);
         }
     }
