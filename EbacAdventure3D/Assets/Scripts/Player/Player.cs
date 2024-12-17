@@ -25,6 +25,8 @@ public class Player : MonoBehaviour/*,IDamageable*/
     public HealthBase healthBase;
 
     private bool _alive = true;
+
+    public UIFillUpdater uiGunUpdater;
     private void OnValidate()
     {
         if(healthBase == null)
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour/*,IDamageable*/
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
     }
     private void Update()
     {
@@ -98,7 +100,7 @@ public class Player : MonoBehaviour/*,IDamageable*/
 
     private void OnKill(HealthBase healthBase)
     {
-        if (_alive && healthBase.GetLife()<=0)
+        if (_alive)
         {
             _alive=false;
             animator.SetTrigger("Death");

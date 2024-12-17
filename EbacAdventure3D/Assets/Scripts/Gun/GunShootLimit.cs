@@ -11,7 +11,7 @@ public class GunShootLimit : GunBase
 
     private bool _recharging;
 
-    public List<UIGunUpdater> uiGunUpdaters;
+    public List<UIFillUpdater> uiGunUpdaters;
 
     private void Awake()
     {
@@ -73,6 +73,6 @@ public class GunShootLimit : GunBase
 
     private void GetAllUI()
     {
-        uiGunUpdaters = GameObject.FindObjectsOfType<UIGunUpdater>().ToList();
+        uiGunUpdaters = GameObject.FindObjectsOfType<UIFillUpdater>().ToList();
     }
 }
