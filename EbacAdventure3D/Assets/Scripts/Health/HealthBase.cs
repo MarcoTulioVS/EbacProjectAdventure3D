@@ -67,4 +67,9 @@ public class HealthBase : MonoBehaviour,IDamageable
     {
         Damage(damage);
     }
+
+    public float GetLife()
+    {
+        return this._currentLife;
+    }
 }
