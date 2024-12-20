@@ -44,8 +44,13 @@ namespace Boss
         {
             Init();
             OnValidate();
-            healthBase.OnKill += OnBossKill;
+
+            if(healthBase != null)
+            {
+                healthBase.OnKill += OnBossKill;
+            }
         }
+            
         private void Init()
         {
             stateMachine = new StateMachine<BossAction>();
