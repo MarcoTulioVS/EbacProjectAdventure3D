@@ -96,6 +96,7 @@ public class Player : MonoBehaviour/*,IDamageable*/
     {
         
         flashColors.ForEach(i => i.Flash());
+        EffectsManager.instance.ChangeVignette();
     }
 
     private void OnKill(HealthBase healthBase)
