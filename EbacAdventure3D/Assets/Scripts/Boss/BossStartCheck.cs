@@ -9,6 +9,7 @@ public class BossStartCheck : MonoBehaviour
 
     public GameObject bossCamera;
 
+
     private void Awake()
     {
         bossCamera.SetActive(false);

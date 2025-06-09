@@ -36,6 +36,7 @@ public class ProjectileBase : MonoBehaviour
 
                 if (damageable != null)
                 {
+                    ShakeCamera.instance.Shake();
                     Vector3 dir = collision.transform.position - transform.position;
                     dir = -dir.normalized;
                     dir.y = 0f;

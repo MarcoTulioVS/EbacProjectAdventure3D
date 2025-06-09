@@ -90,6 +90,7 @@ public class Player : MonoBehaviour/*,IDamageable*/
     public void Damage(HealthBase healthBase, bool antiChicken, Vector3 dir)
     {
         Damage(healthBase);
+        
     }
 
     public void Damage(HealthBase healthBase)
@@ -97,6 +98,8 @@ public class Player : MonoBehaviour/*,IDamageable*/
         
         flashColors.ForEach(i => i.Flash());
         EffectsManager.instance.ChangeVignette();
+        ShakeCamera.instance.Shake();
+        
     }
 
     private void OnKill(HealthBase healthBase)
