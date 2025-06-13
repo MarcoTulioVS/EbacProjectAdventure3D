@@ -7,6 +7,6 @@ public class ItemCollectablePlanet : ItemCollectableBase
     protected override void OnCollect()
     {
         base.OnCollect();
-        ItemManager.instance.AddPlanet();
+        //ItemManager.instance.AddPlanet();
     }
 }
