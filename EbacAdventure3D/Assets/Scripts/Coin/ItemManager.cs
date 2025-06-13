@@ -15,41 +15,55 @@ namespace Itens
     {
         public List<ItemSetup> itemSetups;
 
-        public SOInt coins;
-        public SOInt planets;
+        //public SOInt coins;
+        //public SOInt planets;
         private void Start()
         {
             Reset();
         }
-        public void AddCoins(int amount = 1)
+        public void AddByType(ItemType itemType,int amount = 1)
         {
-            coins.value += amount;
+            itemSetups.Find(i=>i.itemType==itemType).soInt.value += amount;
             //UpdateUI();
         }
 
         public void AddPlanet(int amount = 1)
         {
-            planets.value += amount;
+            //planets.value += amount;
             //UpdateUIPlanet();
         }
 
         private void Reset()
         {
-            coins.value = 0;
-            planets.value = 0;
+            foreach(var i in itemSetups)
+            {
+                i.soInt.value = 0;
+            }
         }
 
-        private void UpdateUI()
+        [NaughtyAttributes.Button]
+        private void AddCoin()
         {
-            UIInGameManager.instance.uiTextCoins.text = coins.value.ToString();
-
-
+            AddByType(ItemType.COIN);
         }
-        private void UpdateUIPlanet()
+
+        [NaughtyAttributes.Button]
+        private void AddLifePack()
         {
-
-            UIInGameManager.instance.uiTextPlanets.text = planets.value.ToString();
+            AddByType(ItemType.LIFE_PACK);
         }
+
+        //private void UpdateUI()
+        //{
+        //    UIInGameManager.instance.uiTextCoins.text = coins.value.ToString();
+
+
+        //}
+        //private void UpdateUIPlanet()
+        //{
+
+        //    UIInGameManager.instance.uiTextPlanets.text = planets.value.ToString();
+        //}
     }
 
     [System.Serializable]
