@@ -23,8 +23,22 @@ namespace Itens
         }
         public void AddByType(ItemType itemType,int amount = 1)
         {
+            if (amount < 0) return;
             itemSetups.Find(i=>i.itemType==itemType).soInt.value += amount;
             //UpdateUI();
+        }
+
+        public void RemoveByType(ItemType itemType,int amount = -1)
+        {
+            if (amount > 0) return;
+
+            var item = itemSetups.Find(i=>i.itemType==itemType);
+            item.soInt.value -= amount;
+
+            if(item.soInt.value < 0)
+            {
+                item.soInt.value = 0;
+            }
         }
 
         public void AddPlanet(int amount = 1)
@@ -51,6 +65,12 @@ namespace Itens
         private void AddLifePack()
         {
             AddByType(ItemType.LIFE_PACK);
+        }
+
+        [NaughtyAttributes.Button]
+        private void RemoveCoin()
+        {
+            RemoveByType(ItemType.COIN);
         }
 
         //private void UpdateUI()
