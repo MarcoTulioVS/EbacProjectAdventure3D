@@ -18,6 +18,9 @@ namespace Itens
         [Header("Sounds")]
         public AudioSource audioSource;
 
+
+        public Collider collider;
+
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == compareTag)
@@ -27,10 +30,16 @@ namespace Itens
         }
         protected virtual void Collect()
         {
+            if(collider != null)
+            {
+                collider.enabled = false;
+            }
+
             if (graphicItem != null)
             {
                 graphicItem.SetActive(false);
             }
+
             Invoke("HideObject", timeToHide);
             OnCollect();
         }
