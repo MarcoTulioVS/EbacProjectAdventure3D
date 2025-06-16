@@ -144,4 +144,18 @@ public class Player : Singleton<Player>/*,IDamageable*/
             transform.position = CheckpointManager.instance.GetPositionFromLastCheckpoint();
         }
     }
+
+    public void IncraseSize(int value)
+    {
+        StartCoroutine("IncreaseSizeTime",value);
+    }
+
+    IEnumerator IncreaseSizeTime(int value)
+    {
+        transform.localScale *= value;
+        yield return new WaitForSeconds(10);
+        transform.localScale = Vector3.one;
+    }
+
+
 }
