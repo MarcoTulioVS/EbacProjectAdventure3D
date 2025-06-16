@@ -9,7 +9,8 @@ namespace Itens
     public enum ItemType
     {
         COIN,
-        LIFE_PACK
+        LIFE_PACK,
+        MUSHROOM
     }
     public class ItemManager : Singleton<ItemManager>
     {
@@ -28,10 +29,14 @@ namespace Itens
             //UpdateUI();
         }
 
-        public void RemoveByType(ItemType itemType,int amount = -1)
+        public ItemSetup GetItemByType(ItemType itemType)
         {
-            if (amount > 0) return;
+            return itemSetups.Find(i=>i.itemType==itemType);
+        }
 
+        public void RemoveByType(ItemType itemType,int amount = 1)
+        {
+            
             var item = itemSetups.Find(i=>i.itemType==itemType);
             item.soInt.value -= amount;
 
@@ -71,6 +76,12 @@ namespace Itens
         private void RemoveCoin()
         {
             RemoveByType(ItemType.COIN);
+        }
+
+        [NaughtyAttributes.Button]
+        private void AddMushroom()
+        {
+            AddByType(ItemType.MUSHROOM);
         }
 
         //private void UpdateUI()
