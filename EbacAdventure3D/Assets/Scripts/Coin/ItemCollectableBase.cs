@@ -2,51 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollectableBase : MonoBehaviour
+namespace Itens
 {
-    public string compareTag = "Player";
-    public ParticleSystem particleSystem;
-
-    public float timeToHide = 1f;
-
-    public GameObject graphicItem;
-
-    [Header("Sounds")]
-    public AudioSource audioSource;
-
-    private void OnTriggerEnter(Collider collision)
+    public class ItemCollectableBase : MonoBehaviour
     {
-        if(collision.gameObject.tag == compareTag)
+        public ItemType itemType;
+
+        public string compareTag = "Player";
+        public ParticleSystem particleSystem;
+
+        public float timeToHide = 1f;
+
+        public GameObject graphicItem;
+
+        [Header("Sounds")]
+        public AudioSource audioSource;
+
+        private void OnTriggerEnter(Collider collision)
         {
-            Collect();
-        }
-    }
-    protected virtual void Collect()
-    {
-        if(graphicItem != null)
-        {
-            graphicItem.SetActive(false);
-        }
-        Invoke("HideObject", timeToHide);
-        OnCollect();
-    } 
-
-    private void HideObject()
-    {
-        gameObject.SetActive(false);
-        
-    }
-    protected virtual void OnCollect()
-    {
-        if(particleSystem != null)
-        {
-            particleSystem.Play();
-
-            if(audioSource != null)
+            if (collision.gameObject.tag == compareTag)
             {
-                audioSource.Play();
+                Collect();
             }
         }
+        protected virtual void Collect()
+        {
+            if (graphicItem != null)
+            {
+                graphicItem.SetActive(false);
+            }
+            Invoke("HideObject", timeToHide);
+            OnCollect();
+        }
+
+        private void HideObject()
+        {
+            gameObject.SetActive(false);
+
+        }
+        protected virtual void OnCollect()
+        {
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+
+                if (audioSource != null)
+                {
+                    audioSource.Play();
+                }
+            }
+
+            ItemManager.instance.AddByType(itemType);
+        }
+
     }
-   
 }

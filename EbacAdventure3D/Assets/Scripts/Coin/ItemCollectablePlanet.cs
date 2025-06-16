@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollectablePlanet : ItemCollectableBase
+namespace Itens
 {
-    protected override void OnCollect()
+    public class ItemCollectablePlanet : ItemCollectableBase
     {
-        base.OnCollect();
-        //ItemManager.instance.AddPlanet();
+        protected override void OnCollect()
+        {
+            base.OnCollect();
+            //ItemManager.instance.AddPlanet();
+        }
     }
 }
