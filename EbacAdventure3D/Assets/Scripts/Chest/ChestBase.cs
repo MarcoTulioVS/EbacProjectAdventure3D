@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class ChestBase : MonoBehaviour
 {
+    public KeyCode keycode = KeyCode.Z;
+
     public Animator animator;
     public string triggerOpen = "Open";
 
@@ -14,6 +16,8 @@ public class ChestBase : MonoBehaviour
     public Ease ease = Ease.OutBack;
     private float startScale;
 
+    private bool _openedChest;
+
     private void Start()
     {
         startScale = notification.transform.localScale.x;
@@ -23,7 +27,10 @@ public class ChestBase : MonoBehaviour
     [NaughtyAttributes.Button]
     public void OpenChest()
     {
+        if (_openedChest) return;
         animator.SetTrigger(triggerOpen);
+        _openedChest = true;
+        HideNotification();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,5 +65,13 @@ public class ChestBase : MonoBehaviour
     public void HideNotification()
     {
         notification.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(keycode) && notification.activeSelf)
+        {
+            OpenChest();
+        }
     }
 }
