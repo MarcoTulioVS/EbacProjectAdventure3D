@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class ChestBase : MonoBehaviour
 {
     public Animator animator;
     public string triggerOpen = "Open";
 
+    [Header("Notification")]
+
     public GameObject notification;
+    public float tweenDuration = 0.2f;
+    public Ease ease = Ease.OutBack;
+    private float startScale;
+
     private void Start()
     {
-        
+        startScale = notification.transform.localScale.x;
+        HideNotification();
     }
 
     [NaughtyAttributes.Button]
@@ -43,6 +50,8 @@ public class ChestBase : MonoBehaviour
     public void ShowNotification()
     {
         notification.SetActive(true);
+        notification.transform.localScale = Vector3.zero;
+        notification.transform.DOScale(startScale,tweenDuration);
     }
 
     [NaughtyAttributes.Button]
