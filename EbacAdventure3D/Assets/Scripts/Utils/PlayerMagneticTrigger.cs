@@ -11,6 +11,7 @@ public class PlayerMagneticTrigger : MonoBehaviour
         if(i != null)
         {
             i.gameObject.AddComponent<Magnetic>();
+            
         }
     }
 }
