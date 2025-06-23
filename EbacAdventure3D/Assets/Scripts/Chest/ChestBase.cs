@@ -18,6 +18,7 @@ public class ChestBase : MonoBehaviour
 
     private bool _openedChest;
 
+    public ChestItemBase chestItem;
     private void Start()
     {
         startScale = notification.transform.localScale.x;
@@ -31,6 +32,12 @@ public class ChestBase : MonoBehaviour
         animator.SetTrigger(triggerOpen);
         _openedChest = true;
         HideNotification();
+        Invoke(nameof(ShowItem), 1f);
+    }
+
+    private void ShowItem()
+    {
+        chestItem.ShowItem();
     }
 
     private void OnTriggerEnter(Collider other)
