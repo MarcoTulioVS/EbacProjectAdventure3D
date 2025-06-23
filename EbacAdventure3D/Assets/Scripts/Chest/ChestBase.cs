@@ -38,6 +38,12 @@ public class ChestBase : MonoBehaviour
     private void ShowItem()
     {
         chestItem.ShowItem();
+        Invoke(nameof(CollectItem), 1f);
+    }
+
+    private void CollectItem()
+    {
+        chestItem.Collect();
     }
 
     private void OnTriggerEnter(Collider other)
