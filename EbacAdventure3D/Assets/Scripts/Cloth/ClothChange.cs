@@ -23,7 +23,7 @@ public class ClothChange : MonoBehaviour
         mesh.sharedMaterials[0].SetTexture(shaderIdName, texture);
     }
 
-    private void ApplyDefaultTexture()
+    public void ApplyDefaultTexture()
     {
         mesh.sharedMaterials[0].SetTexture(shaderIdName, defaultTexture);
     }

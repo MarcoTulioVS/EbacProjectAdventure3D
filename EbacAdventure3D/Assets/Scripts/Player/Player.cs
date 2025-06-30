@@ -30,7 +30,8 @@ public class Player : Singleton<Player>/*,IDamageable*/
     public UIFillUpdater uiGunUpdater;
 
     [Header("Skin")]
-    public ClothChange clothChange;
+    [SerializeField]
+    private ClothChange _clothChange;
 
 
     private void OnValidate()
@@ -164,16 +165,28 @@ public class Player : Singleton<Player>/*,IDamageable*/
     }
 
 
-    public void ChangeSpeed(float speed, float duretion)
+    public void ChangeSpeed(float speed, float duration)
     {
-        StartCoroutine(ChangeSpeedCoroutine(speed, duretion));
+        StartCoroutine(ChangeSpeedCoroutine(speed, duration));
     }
 
     IEnumerator ChangeSpeedCoroutine(float localSpeed,float duration)
     {
         var defaultSpeed = speed;
-        speed = localSpeed;
+        speed *= localSpeed;
         yield return new WaitForSeconds(duration);
         speed = defaultSpeed;
+    }
+
+    public void ChangeTexture(ClothSetup setup,float duration)
+    {
+        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+    }
+
+    IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
+    {
+        _clothChange.ChangeTexture(setup);
+        yield return new WaitForSeconds(duration);
+        _clothChange.ApplyDefaultTexture();
     }
 }

@@ -10,6 +10,8 @@ namespace Cloth
 
         public string compareTag = "Player";
 
+        public float duration = 2f;
+
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.transform.CompareTag(compareTag))
@@ -24,7 +26,7 @@ namespace Cloth
 
             var setup = ClothManager.instance.GetSetupByType(clothType);
 
-            Player.instance.clothChange.ChangeTexture(setup);
+            Player.instance.ChangeTexture(setup,duration);
         }
 
         private void HideObject()
