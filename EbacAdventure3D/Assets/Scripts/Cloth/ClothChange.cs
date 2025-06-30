@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cloth;
 public class ClothChange : MonoBehaviour
 {
     public SkinnedMeshRenderer mesh;
@@ -28,5 +28,9 @@ public class ClothChange : MonoBehaviour
         mesh.sharedMaterials[0].SetTexture(shaderIdName, defaultTexture);
     }
 
+    public void ChangeTexture(ClothSetup setup)
+    {
+        mesh.sharedMaterials[0].SetTexture(shaderIdName, setup.texture);
+    }
     
 }

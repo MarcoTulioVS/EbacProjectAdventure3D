@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
+using Cloth;
 public class Player : Singleton<Player>/*,IDamageable*/
 {
     public CharacterController characterController;
@@ -27,6 +28,11 @@ public class Player : Singleton<Player>/*,IDamageable*/
     private bool _alive = true;
 
     public UIFillUpdater uiGunUpdater;
+
+    [Header("Skin")]
+    public ClothChange clothChange;
+
+
     private void OnValidate()
     {
         if(healthBase == null)

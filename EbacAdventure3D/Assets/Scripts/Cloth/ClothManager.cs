@@ -13,7 +13,7 @@ namespace Cloth
     {
         public List<ClothSetup> clothSetups;
 
-        public ClothSetup GetClothByType(ClothType clothType)
+        public ClothSetup GetSetupByType(ClothType clothType)
         {
             return clothSetups.Find(i=>i.clothType == clothType);
         }
