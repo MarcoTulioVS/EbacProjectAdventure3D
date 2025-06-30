@@ -33,6 +33,7 @@ public class Player : Singleton<Player>/*,IDamageable*/
     [SerializeField]
     private ClothChange _clothChange;
 
+    private bool invertGravity = false;
 
     private void OnValidate()
     {
@@ -94,7 +95,10 @@ public class Player : Singleton<Player>/*,IDamageable*/
 
         characterController.Move(speedVector * Time.deltaTime);
         animator.SetBool("Run", inputAxisVertical != 0);
-        
+
+        ApplyGravityChange();
+
+
     }
 
     public void Damage(float damage, bool antiChicken)
@@ -188,5 +192,29 @@ public class Player : Singleton<Player>/*,IDamageable*/
         _clothChange.ChangeTexture(setup);
         yield return new WaitForSeconds(duration);
         _clothChange.ApplyDefaultTexture();
+    }
+
+    public void ChangeGravity(bool value, float duration)
+    {
+        //invertGravity = value;
+        StartCoroutine(ChangeGravityCoroutine(value, duration));
+    }
+    public void ApplyGravityChange()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (invertGravity)
+            {
+                gravity *= -1;
+            }
+        }
+        
+    }
+
+    IEnumerator ChangeGravityCoroutine(bool value,float duration)
+    {
+        invertGravity = value;
+        yield return new WaitForSeconds(duration);
+        invertGravity = !value;
     }
 }
