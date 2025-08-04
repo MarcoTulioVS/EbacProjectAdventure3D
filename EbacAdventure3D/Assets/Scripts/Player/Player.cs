@@ -35,6 +35,8 @@ public class Player : Singleton<Player>/*,IDamageable*/
 
     private bool invertGravity = false;
 
+    private bool _isJumping;
+
     private void OnValidate()
     {
         if(healthBase == null)
@@ -66,11 +68,24 @@ public class Player : Singleton<Player>/*,IDamageable*/
 
         if (characterController.isGrounded)
         {
+            if (_isJumping)
+            {
+                _isJumping = false;
+                animator.SetTrigger("Land");
+            }
+
             vSpeed = 0;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 vSpeed = jumpSpeed;
+
+                if (!_isJumping)
+                {
+                    _isJumping = true;
+                    animator.SetTrigger("Jump");
+                }
+                
             }
         }
 
