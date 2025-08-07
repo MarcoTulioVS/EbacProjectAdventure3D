@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Animation;
+using UnityEngine.Events;
 namespace Enemy
 {
     public class EnemyBase : MonoBehaviour,IDamageable
@@ -46,6 +47,9 @@ namespace Enemy
         public bool lookAtPlayer;
 
         private Player _player;
+
+        [Header("Events")]
+        public UnityEvent OnKillEvent;
         private void Awake()
         {
             Init();
@@ -78,6 +82,7 @@ namespace Enemy
         protected virtual void OnKill()
         {
             //Destroy(gameObject,3);
+            
             if (coll != null)
             {
                 coll.enabled = false;
@@ -85,7 +90,7 @@ namespace Enemy
             PlayAnimationByTrigger(AnimationType.DEATH);
             deathParticle.Play();
             Destroy(gameObject, 3);
-            
+            OnKillEvent?.Invoke();
         }
 
         public virtual void OnDamage(float dmg,bool antiChicken)

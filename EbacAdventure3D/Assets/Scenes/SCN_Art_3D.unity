@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemClothGravity
       objectReference: {fileID: 0}
+    - target: {fileID: 3582849548455353859, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3582849548455353862, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -1587,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_MonsterSlime_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8929186499503660615, guid: 86dc2d7519f0fa047a4a9adbc81a8da7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86dc2d7519f0fa047a4a9adbc81a8da7, type: 3}
 --- !u!1 &175294262
@@ -1604,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &175294263
 Transform:
   m_ObjectHideFlags: 0
@@ -1739,7 +1747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &212671863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12068,7 +12076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1082142956
 Transform:
   m_ObjectHideFlags: 0
@@ -12168,6 +12176,10 @@ PrefabInstance:
     - target: {fileID: 3582849548455353859, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
       propertyPath: m_Name
       value: ItemClothGravity (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582849548455353859, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3582849548455353862, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
       propertyPath: m_RootOrder
@@ -19300,7 +19312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456540135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 414.11258, y: -7.0408716, z: 41.757133}
+  m_LocalPosition: {x: 389.09, y: -7.0408716, z: 57.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2073934320}
@@ -19888,7 +19900,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.011293382, y: 0.98344237, z: -0.065945074, w: 0.16841881}
+  m_LocalRotation: {x: 0.011293383, y: 0.98344237, z: -0.065945104, w: 0.16841877}
   m_LocalPosition: {x: 411.1042, y: -4.59, z: 23.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -20226,7 +20238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1580282735
 Transform:
   m_ObjectHideFlags: 0
@@ -21259,6 +21271,10 @@ PrefabInstance:
     - target: {fileID: 7336076974915261568, guid: 5530aaddfe55de5489d8221bbcb7b6c9, type: 3}
       propertyPath: m_Name
       value: PFB_GroundRock06 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336076974915261568, guid: 5530aaddfe55de5489d8221bbcb7b6c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5530aaddfe55de5489d8221bbcb7b6c9, type: 3}
@@ -23473,7 +23489,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938577965}
-  m_LocalRotation: {x: 0.011293382, y: 0.98344237, z: -0.065945074, w: 0.16841881}
+  m_LocalRotation: {x: 0.011293383, y: 0.98344237, z: -0.065945104, w: 0.16841877}
   m_LocalPosition: {x: 4.7139893, y: 1.4796772, z: -23.497385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23892,7 +23908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1976340342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24749,6 +24765,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8043139984699745673, guid: 6a85956ddea0a304da62a369edd2c2fa, type: 3}
   m_PrefabInstance: {fileID: 2048731181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2053469683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7336076974915261568, guid: 5530aaddfe55de5489d8221bbcb7b6c9, type: 3}
+  m_PrefabInstance: {fileID: 1687589338}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2071971932
 PrefabInstance:
@@ -25756,6 +25777,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_05
       objectReference: {fileID: 0}
+    - target: {fileID: 5677694183038614512, guid: 60987e3b08f967548a1589fc3ebb22d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5677694183038614514, guid: 60987e3b08f967548a1589fc3ebb22d6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -25879,6 +25904,38 @@ PrefabInstance:
       propertyPath: deathParticle
       value: 
       objectReference: {fileID: 243118211}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2053469683}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357965545108216380, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
+      propertyPath: OnKillEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2357965545108216381, guid: 07e8086bcd606584c86044cc5bc90e01, type: 3}
       propertyPath: m_Name
       value: Enemy_01
@@ -26077,6 +26134,10 @@ PrefabInstance:
     - target: {fileID: 3582849548455353859, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
       propertyPath: m_Name
       value: ItemClothStrong
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582849548455353859, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3582849548455353862, guid: f46ab13818982be4aaf674e0597930ae, type: 3}
       propertyPath: m_RootOrder
@@ -26786,6 +26847,10 @@ PrefabInstance:
     - target: {fileID: 7236543593459261500, guid: aea6c1e14e19799439f8c965695aa8e6, type: 3}
       propertyPath: m_Name
       value: ItemClothSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236543593459261500, guid: aea6c1e14e19799439f8c965695aa8e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236543593459261503, guid: aea6c1e14e19799439f8c965695aa8e6, type: 3}
       propertyPath: m_RootOrder
