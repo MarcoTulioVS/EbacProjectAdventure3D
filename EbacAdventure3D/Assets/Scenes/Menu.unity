@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 821109756}
   - component: {fileID: 821109755}
   - component: {fileID: 821109758}
+  - component: {fileID: 821109759}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -506,6 +507,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8791dd6f964fefe49a98f2d0f3199d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &821109759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821109753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01aa94bbfa73910448ab8da5dd92890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiTextName: {fileID: 601307896}
 --- !u!1 &1103871214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1413,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523183258794030682, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: _saveSetup.lastPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: _saveSetup.lastPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: _saveSetup.lastPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

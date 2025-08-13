@@ -23,6 +23,7 @@ public class CheckpointBase : MonoBehaviour
     {
         TurnItOn();
         SaveCheckpoint();
+        SavePosition();
     }
 
     [NaughtyAttributes.Button]
@@ -47,5 +48,12 @@ public class CheckpointBase : MonoBehaviour
 
         CheckpointManager.instance.SaveCheckpoint(key);
         checkpointActived = true;
+    }
+
+    private void SavePosition()
+    {
+        SaveManager.instance.Setup.lastPosition = transform.position;
+        
+        SaveManager.instance.Save();
     }
 }

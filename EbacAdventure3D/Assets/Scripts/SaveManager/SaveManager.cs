@@ -13,7 +13,7 @@ public class SaveManager : Singleton<SaveManager>
     private string path = Application.streamingAssetsPath + "/save.txt";
 
     public int lastLevel;
-
+    public Vector3 lastPosition;
     public Action<SaveSetup> FileLoaded;
 
     public SaveSetup Setup { get { return _saveSetup; } }
@@ -33,10 +33,11 @@ public class SaveManager : Singleton<SaveManager>
     private void Start()
     {
         Invoke(nameof(Load), .1f);
+        
     }
 
     [NaughtyAttributes.Button]
-    private void Save()
+    public void Save()
     {
        
         string setupToJson = JsonUtility.ToJson(_saveSetup,true);
@@ -76,7 +77,14 @@ public class SaveManager : Singleton<SaveManager>
             fileLoaded = File.ReadAllText(path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
 
+            lastPosition = _saveSetup.lastPosition;
             lastLevel = _saveSetup.lastLevel;
+            
+            
+            //lastPosition.x = _saveSetup.lastPositionX;
+            //lastPosition.y = _saveSetup.lastPositionY;
+            //lastPosition.z = _saveSetup.lastPositionZ;
+
         }
         else
         {
@@ -84,7 +92,7 @@ public class SaveManager : Singleton<SaveManager>
             Save();
         }
 
-        FileLoaded.Invoke(_saveSetup);
+        FileLoaded?.Invoke(_saveSetup);
 
     }
     public void SaveLastLevel(int level)
@@ -96,15 +104,21 @@ public class SaveManager : Singleton<SaveManager>
     }
 
     [NaughtyAttributes.Button]
-    private void SavaLevelOne()
+    private void SaveLevelOne()
     {
         SaveLastLevel(1);
     }
 
     [NaughtyAttributes.Button]
-    private void SavaLevelFive()
+    private void SaveLevelFive()
     {
         SaveLastLevel(5);
+    }
+
+    private void OnApplicationQuit()
+    {
+        Save();
+        
     }
 }
 
@@ -116,4 +130,10 @@ public class SaveSetup
 
     public float coins;
     public float health;
+
+    //public float lastPositionX;
+    //public float lastPositionY;
+    //public float lastPositionZ;
+    public Vector3 lastPosition;
+    
 }

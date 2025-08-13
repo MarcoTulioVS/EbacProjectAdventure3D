@@ -51,6 +51,8 @@ public class Player : Singleton<Player>/*,IDamageable*/
         OnValidate();
         healthBase.OnDamage += Damage;
         healthBase.OnKill += OnKill;
+
+        
     }
 
     //private void Awake()
@@ -60,6 +62,15 @@ public class Player : Singleton<Player>/*,IDamageable*/
     //    healthBase.OnDamage += Damage;
     //    healthBase.OnKill += OnKill;
     //}
+
+    private void Start()
+    {
+        
+        transform.position = SaveManager.instance.Setup.lastPosition;
+        
+    }
+
+    
     private void Update()
     {
         transform.Rotate(0,Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime,0);
@@ -232,4 +243,6 @@ public class Player : Singleton<Player>/*,IDamageable*/
         yield return new WaitForSeconds(duration);
         invertGravity = !value;
     }
+
+    
 }
