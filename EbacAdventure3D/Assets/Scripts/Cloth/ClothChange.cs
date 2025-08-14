@@ -17,15 +17,17 @@ public class ClothChange : MonoBehaviour
         ApplyDefaultTexture();
     }
 
-    [NaughtyAttributes.Button]
-    private void ChangeTexture()
+    
+    public void ChangeTexture(Texture texture)
     {
         mesh.sharedMaterials[0].SetTexture(shaderIdName, texture);
+        SaveManager.instance.Setup.texture = texture;
     }
 
     public void ApplyDefaultTexture()
     {
-        mesh.sharedMaterials[0].SetTexture(shaderIdName, defaultTexture);
+        
+        mesh.sharedMaterials[0].SetTexture(shaderIdName, SaveManager.instance.Setup.texture);
     }
 
     public void ChangeTexture(ClothSetup setup)

@@ -120,6 +120,8 @@ public class SaveManager : Singleton<SaveManager>
         Save();
         
     }
+
+    
 }
 
 [System.Serializable]
@@ -135,5 +137,5 @@ public class SaveSetup
     //public float lastPositionY;
     //public float lastPositionZ;
     public Vector3 lastPosition;
-    
+    public Texture texture;
 }
