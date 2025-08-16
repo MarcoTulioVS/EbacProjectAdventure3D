@@ -9,6 +9,6 @@
         "z": 29.3799991607666
     },
     "texture": {
-        "instanceID": 19026
+        "instanceID": 0
     }
 }
