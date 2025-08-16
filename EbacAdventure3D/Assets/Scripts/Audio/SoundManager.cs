@@ -49,6 +49,7 @@ public class SFXSetup
 
 public enum SFXType
 {
+    NONE,
     TYPE_01,
     TYPE_02,
     TYPE_03

@@ -6,6 +6,7 @@ namespace Itens
 {
     public class ItemCollectableBase : MonoBehaviour
     {
+        public SFXType sfxType;
         public ItemType itemType;
 
         public string compareTag = "Player";
@@ -30,6 +31,8 @@ namespace Itens
         }
         protected virtual void Collect()
         {
+            PlaySFX();
+
             if(collider != null)
             {
                 collider.enabled = false;
@@ -64,5 +67,9 @@ namespace Itens
             ItemManager.instance.AddByType(itemType);
         }
 
+        private void PlaySFX()
+        {
+            SFXPool.instance.Play(sfxType);
+        }
     }
 }
