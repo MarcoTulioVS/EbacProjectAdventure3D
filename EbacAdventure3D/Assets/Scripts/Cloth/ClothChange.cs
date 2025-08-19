@@ -11,6 +11,7 @@ public class ClothChange : MonoBehaviour
     public Texture2D defaultTexture;
 
     public string shaderIdName = "_EmissionMap";
+    
 
     private void Start()
     {
@@ -22,12 +23,18 @@ public class ClothChange : MonoBehaviour
     {
         mesh.sharedMaterials[0].SetTexture(shaderIdName, texture);
         SaveManager.instance.Setup.texture = texture;
+        
     }
 
     public void ApplyDefaultTexture()
     {
+        if (SaveManager.instance.Setup.texture != null)
+        {
+            mesh.sharedMaterials[0].SetTexture(shaderIdName, SaveManager.instance.Setup.texture);
+        }
         
-        mesh.sharedMaterials[0].SetTexture(shaderIdName, SaveManager.instance.Setup.texture);
+        //mesh.sharedMaterials[0].SetTexture(shaderIdName, defaultTexture);
+        
     }
 
     public void ChangeTexture(ClothSetup setup)
