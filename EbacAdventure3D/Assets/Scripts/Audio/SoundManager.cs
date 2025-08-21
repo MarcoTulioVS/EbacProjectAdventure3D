@@ -9,6 +9,10 @@ public class SoundManager : Singleton<SoundManager>
 
     public AudioSource musicSource;
 
+    public AudioListener audioListener;
+
+    [SerializeField]
+    private int index;
     public void PlayMusicByType(MusicType musicType)
     {
         var music  = GetMusicByType(musicType);
@@ -24,6 +28,26 @@ public class SoundManager : Singleton<SoundManager>
     {
         return sfxSetups.Find(i => i.type == sfxType);
     }
+
+    public void MuteAudio()
+    {
+        audioListener.enabled = !audioListener.enabled;
+    }
+
+    public void NextMusic()
+    {
+        index++;
+
+        if (index > musicSetups.Count - 1)
+        {
+            index=0;
+        }
+        
+        musicSource.clip = musicSetups[index].audioClip;
+        musicSource.Play();
+        
+        
+    }
 }
 
 [System.Serializable]
@@ -37,7 +61,8 @@ public enum MusicType
 {
     TYPE_01,
     TYPE_02,
-    TYPE_03
+    TYPE_03,
+    TYPE_04,
 }
 
 [System.Serializable]
@@ -54,3 +79,4 @@ public enum SFXType
     TYPE_02,
     TYPE_03
 }
+

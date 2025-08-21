@@ -1416,6 +1416,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: lastPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: lastPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
+      propertyPath: lastPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523183258794030683, guid: 5f7020fb3e62d4b42817839e3cd46dee, type: 3}
       propertyPath: _saveSetup.texture
       value: 
       objectReference: {fileID: 2800000, guid: 8d0f7b33a4f3bf5459574270675b2718, type: 3}

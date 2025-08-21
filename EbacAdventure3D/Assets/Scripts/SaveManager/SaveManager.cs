@@ -13,7 +13,7 @@ public class SaveManager : Singleton<SaveManager>
     private string path = Application.streamingAssetsPath + "/save.txt";
 
     public int lastLevel;
-    public Vector3 lastPosition = new Vector3(411.1042f, -7.59f, 16.9f);
+    public Vector3 lastPosition;
     public Action<SaveSetup> FileLoaded;
 
     public SaveSetup Setup { get { return _saveSetup; } }
@@ -41,7 +41,7 @@ public class SaveManager : Singleton<SaveManager>
     {
        
         string setupToJson = JsonUtility.ToJson(_saveSetup,true);
-        Debug.Log(setupToJson);
+        //Debug.Log(setupToJson);
         SaveFile(setupToJson);
     }
 

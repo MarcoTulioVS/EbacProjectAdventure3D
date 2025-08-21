@@ -65,9 +65,15 @@ public class Player : Singleton<Player>/*,IDamageable*/
 
     private void Start()
     {
+        if (SaveManager.instance.Setup.lastPosition == Vector3.zero)
+        {
+            
+            SaveManager.instance.Setup.lastPosition = new Vector3(411.89f, -7.59f, 16.9f);
+        }
         
         transform.position = SaveManager.instance.Setup.lastPosition;
         
+
     }
 
     

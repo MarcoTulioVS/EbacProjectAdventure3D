@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Itens;
 public class ChestBase : MonoBehaviour
 {
     public KeyCode keycode = KeyCode.Z;
@@ -19,6 +20,10 @@ public class ChestBase : MonoBehaviour
     private bool _openedChest;
 
     public ChestItemBase chestItem;
+
+    public SFXType sfxType;
+    public AudioSource audioSource;
+    
     private void Start()
     {
         startScale = notification.transform.localScale.x;
@@ -29,6 +34,11 @@ public class ChestBase : MonoBehaviour
     public void OpenChest()
     {
         if (_openedChest) return;
+        
+        var sfxChest = SoundManager.instance.GetSFXByType(sfxType);
+        audioSource.clip = sfxChest.audioClip;
+        audioSource.Play();
+
         animator.SetTrigger(triggerOpen);
         _openedChest = true;
         HideNotification();
@@ -78,6 +88,11 @@ public class ChestBase : MonoBehaviour
     public void HideNotification()
     {
         notification.SetActive(false);
+    }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
     }
 
     private void Update()
