@@ -39,4 +39,9 @@ public class GameManager : Singleton<GameManager>
     {
 
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
