@@ -10,6 +10,9 @@ public class CheckpointBase : MonoBehaviour
     private string checkpointKey = "CheckpointKey";
 
     private bool checkpointActived;
+
+    public SFXType sfxType;
+    public AudioSource audioSource;
     private void OnTriggerEnter(Collider other)
     {
         if (!checkpointActived && other.gameObject.tag == "Player")
@@ -30,6 +33,7 @@ public class CheckpointBase : MonoBehaviour
     private void TurnItOn()
     {
         meshRenderer.material.SetColor("_Color", Color.yellow);
+        PlaySound();
         
     }
 
@@ -55,5 +59,12 @@ public class CheckpointBase : MonoBehaviour
         SaveManager.instance.Setup.lastPosition = transform.position;
         
         SaveManager.instance.Save();
+    }
+
+    public void PlaySound()
+    {
+        var sfxChest = SoundManager.instance.GetSFXByType(sfxType);
+        audioSource.clip = sfxChest.audioClip;
+        audioSource.Play();
     }
 }
