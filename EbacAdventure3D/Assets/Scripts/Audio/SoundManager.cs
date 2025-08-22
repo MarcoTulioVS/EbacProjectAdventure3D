@@ -11,6 +11,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public AudioListener audioListener;
 
+    public List<AudioSource> audioSources;
     [SerializeField]
     private int index;
     public void PlayMusicByType(MusicType musicType)
@@ -32,6 +33,12 @@ public class SoundManager : Singleton<SoundManager>
     public void MuteAudio()
     {
         audioListener.enabled = !audioListener.enabled;
+
+        foreach(var audio in audioSources)
+        {
+            audio.enabled = !audio.enabled;
+        }
+        
     }
 
     public void NextMusic()

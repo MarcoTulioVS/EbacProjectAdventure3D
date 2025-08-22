@@ -30630,6 +30630,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2681048590008870294, guid: b38b3b269f02d694c94d57c4eddc00ed, type: 3}
+      propertyPath: audioSources.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681048590008870294, guid: b38b3b269f02d694c94d57c4eddc00ed, type: 3}
+      propertyPath: audioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 1897817800}
+    - target: {fileID: 2681048590008870294, guid: b38b3b269f02d694c94d57c4eddc00ed, type: 3}
+      propertyPath: audioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 1394923043}
+    - target: {fileID: 2681048590008870294, guid: b38b3b269f02d694c94d57c4eddc00ed, type: 3}
       propertyPath: sfxSetups.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
